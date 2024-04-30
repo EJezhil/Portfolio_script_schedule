@@ -1,0 +1,19 @@
+name: run main.py
+
+on:
+  schedule:
+    - cron: '15 * * * *' # Every 15 minutes
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: setup python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11' # install the python version needed
+
+
+      - name: execute py script # run main.py
+        run: python main.py
