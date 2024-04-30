@@ -1,0 +1,20 @@
+name: run main.py
+
+on:
+  schedule:
+    - cron: '* * * * *' # Every minutes
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: setup python
+        uses: actions/setup-python@v2
+        
+        with:
+          python-version: '3.9' # install the python version needed
+
+
+      - name: execute py script # run main.py
+        run: python main.py
